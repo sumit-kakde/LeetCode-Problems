@@ -11,12 +11,12 @@ public:
         if (nums[mid] >= target) {
             right = mid - 1;
 
-            ans=mid; // Search in the right half
+           // ans=mid; // Search in the right half
         } else {
             left = mid+1; // Search in the left half
         }
     }
 
-    return ans; // Insertion position found
+    return left; // Insertion position found
     }
 };

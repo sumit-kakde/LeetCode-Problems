@@ -1,13 +1,23 @@
 class Solution {
 public:
+   const int ch =256;
+
     bool isAnagram(string s, string t) {
-      if(s.size()!=t.size()){
-          return false;
-      }
-        sort(s.begin(),s.end());
-        sort(t.begin(),t.end());
-        return (s==t);
-
-
+   if(s.size()!=t.size()){
+       return false;
+   }
+   
+     int count[256]={0};
+     for(int i=0;i<s.size();i++){
+         count[s[i]]++;
+         count[t[i]]--;
+     }
+    for(int i=0;i<ch;i++){
+        if (count[i]!=0){
+            return false;
+        }
+      
+    }
+      return true;
     }
 };
